@@ -14,13 +14,21 @@ interface ExperienceTimelineProps {
 
 const ExperienceTimeline: React.FC<ExperienceTimelineProps> = ({ experiences }) => {
   const [visibleItems, setVisibleItems] = useState<number[]>([]);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    window.addEventListener("resize", handleResize);
+    
     experiences.forEach((_, index) => {
       setTimeout(() => {
         setVisibleItems((prev) => [...prev, index]);
       }, index * 200);
     });
+    
+    return () => window.removeEventListener("resize", handleResize);
   }, [experiences.length]);
 
   return (
@@ -37,12 +45,21 @@ const ExperienceTimeline: React.FC<ExperienceTimelineProps> = ({ experiences }) 
           }}
         >
           <div style={styles.timelineDot} />
-          <div style={styles.content}>
+          <div style={{
+            ...styles.content,
+            gridTemplateColumns: isMobile ? "1fr" : "120px 1fr",
+            padding: isMobile ? "16px" : "24px"
+          }}>
             {exp.image ? (
               <img
                 src={exp.image}
                 alt={exp.company}
-                style={styles.image}
+                style={{
+                  ...styles.image,
+                  width: isMobile ? "100%" : "120px",
+                  height: isMobile ? "200px" : "120px",
+                  justifySelf: isMobile ? "stretch" : "auto"
+                }}
               />
             ) : (
               <div style={styles.imagePlaceholder}>

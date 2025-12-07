@@ -4,10 +4,16 @@ import userImage from "../assets/IMG_2040.JPG";
 const AnimatedHero: React.FC = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isVisible, setIsVisible] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const heroRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     setIsVisible(true);
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    window.addEventListener("resize", handleResize);
+    
     const handleMouseMove = (e: MouseEvent) => {
       if (heroRef.current) {
         const rect = heroRef.current.getBoundingClientRect();
@@ -18,7 +24,10 @@ const AnimatedHero: React.FC = () => {
       }
     };
     window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
   return (
@@ -32,7 +41,7 @@ const AnimatedHero: React.FC = () => {
         position: "relative",
         overflow: "hidden",
         background: `radial-gradient(circle at ${mousePosition.x * 100}% ${mousePosition.y * 100}%, rgba(100, 108, 255, 0.15) 0%, transparent 50%)`,
-        padding: "20px 24px 80px"
+        padding: isMobile ? "40px 16px 60px" : "20px 24px 80px"
       }}
     >
       {/* Animated background particles */}
@@ -75,6 +84,8 @@ const AnimatedHero: React.FC = () => {
         <div
           style={{
             ...styles.content,
+            gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr",
+            gap: isMobile ? "40px" : "80px",
             opacity: isVisible ? 1 : 0,
             transform: isVisible ? "translateY(0)" : "translateY(30px)",
             transition: "all 0.8s ease"

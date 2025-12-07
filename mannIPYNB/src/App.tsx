@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import AnimatedHero from "./components/AnimatedHero";
 import ExperienceCell from "./components/ExperienceCell";
 import AnimatedSection from "./components/AnimatedSection";
@@ -13,6 +13,16 @@ import alertifyImage from "./assets/alertify.png";
 import "./App.css";
 
 function App() {
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const experiences = [
     {
       title: "Student Data Scientist",
@@ -68,13 +78,13 @@ function App() {
     <div style={{ background: "#0a0a0f", color: "#ffffff", minHeight: "100vh" }}>
       <AnimatedHero />
       
-      <AnimatedSection id="experience" style={{ padding: "120px 24px", background: "#0f0f1e" }}>
+      <AnimatedSection id="experience" style={{ padding: isMobile ? "60px 16px" : "120px 24px", background: "#0f0f1e" }}>
         <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
           <h2 style={{ 
-            fontSize: "clamp(32px, 5vw, 64px)", 
+            fontSize: "clamp(28px, 6vw, 64px)", 
             fontWeight: 700, 
             color: "#ffffff", 
-            marginBottom: "60px",
+            marginBottom: isMobile ? "32px" : "60px",
             textAlign: "center" as const
           }}>
             Experience
@@ -83,13 +93,13 @@ function App() {
         </div>
       </AnimatedSection>
 
-      <AnimatedSection id="projects" style={{ padding: "120px 24px", background: "#0a0a0f" }}>
+      <AnimatedSection id="projects" style={{ padding: isMobile ? "60px 16px" : "120px 24px", background: "#0a0a0f" }}>
         <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
           <h2 style={{ 
-            fontSize: "clamp(32px, 5vw, 64px)", 
+            fontSize: "clamp(28px, 6vw, 64px)", 
             fontWeight: 700, 
             color: "#ffffff", 
-            marginBottom: "60px",
+            marginBottom: isMobile ? "32px" : "60px",
             textAlign: "center" as const
           }}>
             Projects
@@ -103,13 +113,13 @@ function App() {
               rel="noopener noreferrer"
               style={{ textDecoration: "none", color: "inherit" }}
             >
-              <div style={{ display: "grid", gridTemplateColumns: "200px 1fr", gap: "32px", alignItems: "start" }}>
+              <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "200px 1fr", gap: isMobile ? "16px" : "32px", alignItems: "start" }}>
                 <img
                   src={fallguyImage}
                   alt="FallGuy"
                   style={{
-                    width: "200px",
-                    height: "150px",
+                    width: isMobile ? "100%" : "200px",
+                    height: isMobile ? "200px" : "150px",
                     borderRadius: "12px",
                     objectFit: "cover" as const,
                     border: "1px solid rgba(100, 108, 255, 0.2)"
@@ -142,13 +152,13 @@ function App() {
               rel="noopener noreferrer"
               style={{ textDecoration: "none", color: "inherit" }}
             >
-              <div style={{ display: "grid", gridTemplateColumns: "200px 1fr", gap: "32px", alignItems: "start", marginTop: "32px" }}>
+              <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "200px 1fr", gap: isMobile ? "16px" : "32px", alignItems: "start", marginTop: isMobile ? "24px" : "32px" }}>
                 <img
                   src={alertifyImage}
                   alt="Alertify"
                   style={{
-                    width: "200px",
-                    height: "150px",
+                    width: isMobile ? "100%" : "200px",
+                    height: isMobile ? "200px" : "150px",
                     borderRadius: "12px",
                     objectFit: "cover" as const,
                     border: "1px solid rgba(100, 108, 255, 0.2)"
@@ -176,7 +186,7 @@ function App() {
         </div>
       </AnimatedSection>
 
-      <AnimatedSection id="skills" style={{ padding: "80px 24px", background: "#0f0f1e" }}>
+      <AnimatedSection id="skills" style={{ padding: isMobile ? "60px 16px" : "80px 24px", background: "#0f0f1e" }}>
         <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
           <h2 style={{ 
             fontSize: "clamp(32px, 5vw, 64px)", 
@@ -199,7 +209,7 @@ function App() {
         </div>
       </AnimatedSection>
 
-      <AnimatedSection id="content" style={{ padding: "80px 24px", background: "#0a0a0f" }}>
+      <AnimatedSection id="content" style={{ padding: isMobile ? "60px 16px" : "80px 24px", background: "#0a0a0f" }}>
         <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
           <h2 style={{ 
             fontSize: "clamp(32px, 5vw, 64px)", 

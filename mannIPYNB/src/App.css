@@ -197,7 +197,7 @@ button:hover:not(:disabled) {
 /* Responsive Design */
 @media (max-width: 768px) {
   #root {
-    padding: 1rem;
+    padding: 0;
   }
   
   .notebook-play-button {
@@ -220,6 +220,54 @@ button:hover:not(:disabled) {
   nav > div > div:last-child {
     flex-wrap: wrap;
     justify-content: center;
+  }
+}
+
+/* Mobile-specific optimizations */
+@media (max-width: 768px) {
+  /* Reduce padding on sections */
+  section {
+    padding: 40px 16px !important;
+  }
+
+  /* Smaller headings */
+  h1 {
+    font-size: clamp(32px, 8vw, 48px) !important;
+  }
+
+  h2 {
+    font-size: clamp(24px, 6vw, 40px) !important;
+    margin-bottom: 32px !important;
+  }
+
+  h3 {
+    font-size: clamp(18px, 5vw, 22px) !important;
+  }
+
+  /* Smaller text */
+  p {
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Even tighter on small phones */
+  section {
+    padding: 30px 12px !important;
+  }
+
+  h2 {
+    font-size: clamp(20px, 6vw, 32px) !important;
+    margin-bottom: 24px !important;
+  }
+
+  h3 {
+    font-size: clamp(16px, 4.5vw, 20px) !important;
+  }
+
+  p {
+    font-size: 13px !important;
   }
 }
 

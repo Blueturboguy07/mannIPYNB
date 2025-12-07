@@ -9,9 +9,15 @@ interface InstagramProfileProps {
 const InstagramProfile: React.FC<InstagramProfileProps> = ({ username, apiEndpoint }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [followerCount] = useState<number>(167);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    window.addEventListener("resize", handleResize);
+    
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -29,6 +35,7 @@ const InstagramProfile: React.FC<InstagramProfileProps> = ({ username, apiEndpoi
       if (sectionRef.current) {
         observer.unobserve(sectionRef.current);
       }
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
@@ -43,10 +50,19 @@ const InstagramProfile: React.FC<InstagramProfileProps> = ({ username, apiEndpoi
         transition: "all 0.8s cubic-bezier(0.4, 0, 0.2, 1)"
       }}
     >
-      <div style={styles.profileSection}>
+      <div style={{
+        ...styles.profileSection,
+        gap: isMobile ? "24px" : "40px",
+        marginBottom: isMobile ? "32px" : "48px",
+        padding: isMobile ? "20px" : "32px",
+        flexDirection: isMobile ? "column" as const : "row" as const,
+        alignItems: isMobile ? "center" as const : "flex-start" as const
+      }}>
         <div
           style={{
             ...styles.profileImageWrapper,
+            width: isMobile ? "120px" : "150px",
+            height: isMobile ? "120px" : "150px",
             transform: isVisible ? "scale(1)" : "scale(0.8)",
             transition: "transform 0.8s ease 0.2s"
           }}
@@ -59,8 +75,15 @@ const InstagramProfile: React.FC<InstagramProfileProps> = ({ username, apiEndpoi
           <div style={styles.profileImageGlow} />
         </div>
 
-        <div style={styles.profileInfo}>
-          <div style={styles.usernameRow}>
+        <div style={{
+          ...styles.profileInfo,
+          minWidth: isMobile ? "100%" : "300px",
+          textAlign: isMobile ? "center" as const : "left" as const
+        }}>
+          <div style={{
+            ...styles.usernameRow,
+            justifyContent: isMobile ? "center" as const : "flex-start" as const
+          }}>
             <h2 style={styles.username}>{username}</h2>
             <a
               href={`https://www.instagram.com/${username}/`}
@@ -88,7 +111,11 @@ const InstagramProfile: React.FC<InstagramProfileProps> = ({ username, apiEndpoi
             </a>
           </div>
 
-          <div style={styles.stats}>
+          <div style={{
+            ...styles.stats,
+            gap: isMobile ? "24px" : "32px",
+            justifyContent: isMobile ? "center" as const : "flex-start" as const
+          }}>
             <div style={styles.stat}>
               <span style={styles.statNumber}>6</span>
               <span style={styles.statLabel}>posts</span>

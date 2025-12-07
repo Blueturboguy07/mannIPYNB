@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 interface SkillCategory {
   name: string;
@@ -12,6 +12,15 @@ interface ExpandableSkillDotsProps {
 
 const ExpandableSkillDots: React.FC<ExpandableSkillDotsProps> = ({ categories }) => {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const handleDotClick = (index: number) => {
     if (expandedIndex === index) {
@@ -22,7 +31,12 @@ const ExpandableSkillDots: React.FC<ExpandableSkillDotsProps> = ({ categories })
   };
 
   return (
-    <div style={styles.container}>
+    <div style={{
+      ...styles.container,
+      gap: isMobile ? "16px" : "24px",
+      minHeight: isMobile ? "300px" : "400px",
+      padding: isMobile ? "20px 16px" : "20px 24px"
+    }}>
       {categories.map((category, index) => {
         const isExpanded = expandedIndex === index;
         return (
@@ -31,8 +45,8 @@ const ExpandableSkillDots: React.FC<ExpandableSkillDotsProps> = ({ categories })
             onClick={() => handleDotClick(index)}
             style={{
               ...styles.dot,
-              width: isExpanded ? "400px" : "120px",
-              height: isExpanded ? "400px" : "120px",
+              width: isExpanded ? (isMobile ? "100%" : "400px") : "120px",
+              height: isExpanded ? (isMobile ? "auto" : "400px") : "120px",
               borderRadius: isExpanded ? "16px" : "50%",
               background: isExpanded
                 ? `linear-gradient(135deg, ${category.color}15 0%, ${category.color}08 100%)`
