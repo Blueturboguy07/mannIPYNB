@@ -5,6 +5,7 @@ interface Experience {
   company: string;
   period: string;
   description: string[];
+  image?: string;
 }
 
 interface ExperienceTimelineProps {
@@ -37,9 +38,17 @@ const ExperienceTimeline: React.FC<ExperienceTimelineProps> = ({ experiences }) 
         >
           <div style={styles.timelineDot} />
           <div style={styles.content}>
-            <div style={styles.imagePlaceholder}>
-              <span style={{ color: "#646cff", fontSize: "12px" }}>Image</span>
-            </div>
+            {exp.image ? (
+              <img
+                src={exp.image}
+                alt={exp.company}
+                style={styles.image}
+              />
+            ) : (
+              <div style={styles.imagePlaceholder}>
+                <span style={{ color: "#646cff", fontSize: "12px" }}>Image</span>
+              </div>
+            )}
             <div style={styles.textContent}>
               <h3 style={styles.title}>{exp.title}</h3>
               <p style={styles.company}>{exp.company}</p>
@@ -104,6 +113,13 @@ const styles = {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
+    border: "1px solid rgba(100, 108, 255, 0.2)"
+  },
+  image: {
+    width: "120px",
+    height: "120px",
+    borderRadius: "8px",
+    objectFit: "cover" as const,
     border: "1px solid rgba(100, 108, 255, 0.2)"
   },
   textContent: {

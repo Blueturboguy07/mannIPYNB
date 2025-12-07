@@ -90,11 +90,11 @@ const styles = {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    gap: "40px",
+    gap: "24px",
     flexWrap: "wrap" as const,
-    minHeight: "500px",
+    minHeight: "400px",
     position: "relative" as const,
-    padding: "60px 24px"
+    padding: "20px 24px"
   },
   dot: {
     position: "relative" as const,
