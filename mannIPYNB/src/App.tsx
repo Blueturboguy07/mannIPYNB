@@ -5,6 +5,7 @@ import AnimatedSection from "./components/AnimatedSection";
 import FloatingCard from "./components/FloatingCard";
 import ExpandableSkillDots from "./components/ExpandableSkillDots";
 import InstagramProfile from "./components/InstagramProfile";
+import OrganizePopup from "./components/OrganizePopup";
 import southwestImage from "./assets/southwest.png";
 import brainNetworksImage from "./assets/brainnetworkslab.png";
 import ismImage from "./assets/ISM.png";
@@ -105,6 +106,93 @@ function App() {
             Projects
           </h2>
           
+          {/* ORGANIZE Project */}
+          <FloatingCard>
+            <a
+              href="https://organizecampus.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "200px 1fr", gap: isMobile ? "16px" : "32px", alignItems: "start" }}>
+                <div style={{
+                  width: isMobile ? "100%" : "200px",
+                  height: isMobile ? "200px" : "150px",
+                  borderRadius: "12px",
+                  border: "1px solid rgba(100, 108, 255, 0.2)",
+                  background: "#ffffff",
+                  padding: "8px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center"
+                }}>
+                  <img
+                    src="/logo.png"
+                    alt="ORGANIZE"
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "contain" as const,
+                      filter: "brightness(1.1)"
+                    }}
+                  />
+                </div>
+                <div>
+                  <div style={{ marginBottom: "16px" }}>
+                    <h3 style={{ color: "#ffffff", fontSize: "24px", fontWeight: 700, marginBottom: "4px", marginTop: 0 }}>
+                      ORGANIZE ↗
+                    </h3>
+                    <p style={{ color: "#646cff", fontSize: "16px", marginBottom: "12px", marginTop: 0 }}>Student Organization Matching Platform</p>
+                    <div style={{ 
+                      display: "inline-block",
+                      padding: "4px 12px",
+                      background: "rgba(100, 108, 255, 0.15)",
+                      borderRadius: "12px",
+                      border: "1px solid rgba(100, 108, 255, 0.4)",
+                      fontSize: "13px",
+                      color: "#646cff",
+                      fontWeight: 600
+                    }}>
+                      Join 200+ students
+                    </div>
+                  </div>
+                  <p style={{ color: "#d4d4d4", lineHeight: "1.8", marginBottom: "16px" }}>
+                    Finding student orgs at TAMU just got a whole lot easier. A matching survey that actually matches you to student 
+                    organizations based on your interests. With 1,300+ organizations on campus, ORGANIZE helps students discover 
+                    orgs far more effectively than what currently exists.
+                  </p>
+                  <div style={{
+                    padding: "12px 16px",
+                    background: "rgba(100, 108, 255, 0.08)",
+                    borderRadius: "8px",
+                    border: "1px solid rgba(100, 108, 255, 0.2)",
+                    marginTop: "12px"
+                  }}>
+                    <div style={{ 
+                      fontSize: "13px", 
+                      color: "#646cff", 
+                      fontWeight: 600, 
+                      marginBottom: "6px",
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "6px"
+                    }}>
+                      <span>🚀</span> Coming Soon: Phase 2
+                    </div>
+                    <p style={{ 
+                      fontSize: "13px", 
+                      color: "#b4b4b8", 
+                      lineHeight: "1.6",
+                      margin: 0
+                    }}>
+                      Organizations will be able to join the platform to host applications, onboarding, and communication directly through ORGANIZE.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </FloatingCard>
+
           {/* FallGuy Project */}
           <FloatingCard>
             <a
@@ -113,7 +201,7 @@ function App() {
               rel="noopener noreferrer"
               style={{ textDecoration: "none", color: "inherit" }}
             >
-              <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "200px 1fr", gap: isMobile ? "16px" : "32px", alignItems: "start" }}>
+              <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "200px 1fr", gap: isMobile ? "16px" : "32px", alignItems: "start", marginTop: isMobile ? "24px" : "32px" }}>
                 <img
                   src={fallguyImage}
                   alt="FallGuy"
@@ -231,6 +319,8 @@ function App() {
           <InstagramProfile username="mann.improves" />
         </div>
       </AnimatedSection>
+      
+      <OrganizePopup />
     </div>
   );
 }

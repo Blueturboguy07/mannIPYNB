@@ -8,7 +8,7 @@ interface InstagramProfileProps {
 
 const InstagramProfile: React.FC<InstagramProfileProps> = ({ username, apiEndpoint }) => {
   const [isVisible, setIsVisible] = useState(false);
-  const [followerCount] = useState<number>(255);
+  const [followerCount] = useState<number>(328);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const sectionRef = useRef<HTMLDivElement>(null);
 
