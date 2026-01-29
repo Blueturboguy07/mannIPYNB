@@ -8,7 +8,7 @@ interface InstagramProfileProps {
 
 const InstagramProfile: React.FC<InstagramProfileProps> = ({ username, apiEndpoint }) => {
   const [isVisible, setIsVisible] = useState(false);
-  const [followerCount] = useState<number>(328);
+  const [followerCount] = useState<number>(541);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const sectionRef = useRef<HTMLDivElement>(null);
 
@@ -117,7 +117,7 @@ const InstagramProfile: React.FC<InstagramProfileProps> = ({ username, apiEndpoi
             justifyContent: isMobile ? "center" as const : "flex-start" as const
           }}>
             <div style={styles.stat}>
-              <span style={styles.statNumber}>6</span>
+              <span style={styles.statNumber}>99</span>
               <span style={styles.statLabel}>posts</span>
             </div>
             <div style={styles.stat}>
@@ -125,7 +125,7 @@ const InstagramProfile: React.FC<InstagramProfileProps> = ({ username, apiEndpoi
               <span style={styles.statLabel}>followers</span>
             </div>
             <div style={styles.stat}>
-              <span style={styles.statNumber}>5</span>
+              <span style={styles.statNumber}>62</span>
               <span style={styles.statLabel}>following</span>
             </div>
           </div>
