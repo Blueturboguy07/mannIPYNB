@@ -11,6 +11,7 @@ import brainNetworksImage from "./assets/brainnetworkslab.png";
 import ismImage from "./assets/ISM.png";
 import fallguyImage from "./assets/falllguy.png";
 import alertifyImage from "./assets/alertify.png";
+import roverImage from "./assets/rover.png";
 import "./App.css";
 
 function App() {
@@ -202,35 +203,24 @@ function App() {
               style={{ textDecoration: "none", color: "inherit" }}
             >
               <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "200px 1fr", gap: isMobile ? "16px" : "32px", alignItems: "start", marginTop: isMobile ? "24px" : "32px" }}>
-                <div style={{
-                  width: isMobile ? "100%" : "200px",
-                  height: isMobile ? "200px" : "150px",
-                  borderRadius: "12px",
-                  border: "1px solid rgba(100, 108, 255, 0.2)",
-                  background: "linear-gradient(135deg, rgba(100, 108, 255, 0.2) 0%, rgba(100, 108, 255, 0.1) 100%)",
-                  padding: "20px",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center"
-                }}>
-                  <div style={{
-                    fontSize: "48px",
-                    fontWeight: 700,
-                    background: "linear-gradient(135deg, #646cff 0%, #7c7cff 100%)",
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                    backgroundClip: "text"
-                  }}>
-                    R
-                  </div>
-                </div>
+                <img
+                  src={roverImage}
+                  alt="Rover"
+                  style={{
+                    width: isMobile ? "100%" : "200px",
+                    height: isMobile ? "200px" : "150px",
+                    borderRadius: "12px",
+                    objectFit: "cover" as const,
+                    border: "1px solid rgba(100, 108, 255, 0.2)"
+                  }}
+                />
                 <div>
                   <div style={{ display: "flex", justifyContent: "space-between", alignItems: "start", marginBottom: "16px" }}>
                     <div>
                       <h3 style={{ color: "#ffffff", fontSize: "24px", fontWeight: 700, marginBottom: "4px" }}>
                         Rover ↗
                       </h3>
-                      <p style={{ color: "#646cff", fontSize: "16px", marginBottom: "8px" }}>TAMUhack 2026</p>
+                      <p style={{ color: "#646cff", fontSize: "16px", marginBottom: "8px" }}>Winner @ TAMUhack 2026</p>
                     </div>
                   </div>
                   <p style={{ color: "#d4d4d4", lineHeight: "1.8" }}>
