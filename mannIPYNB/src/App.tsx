@@ -316,7 +316,7 @@ function App() {
           }}>
             Check out my Instagram
           </p>
-          <InstagramProfile username="mann.improves" />
+          <InstagramProfile username="mann.ascends" />
         </div>
       </AnimatedSection>
       

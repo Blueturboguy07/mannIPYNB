@@ -27,7 +27,7 @@ Create a backend endpoint (Node.js, Python, etc.) that:
 ### Update the Component:
 In `App.tsx`, pass the API endpoint:
 ```tsx
-<InstagramReels username="mann.improves" apiEndpoint="/api/instagram/reels" />
+<InstagramReels username="mann.ascends" apiEndpoint="/api/instagram/reels" />
 ```
 
 ## Option 2: Instagram Graph API Setup

@@ -151,7 +151,7 @@ const AnimatedHero: React.FC = () => {
                 </svg>
               </a>
               <a
-                href="https://www.instagram.com/mann.improves/"
+                href="https://www.instagram.com/mann.ascends/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="social-button"
