@@ -193,6 +193,57 @@ function App() {
             </a>
           </FloatingCard>
 
+          {/* Rover Project */}
+          <FloatingCard>
+            <a
+              href="https://devpost.com/software/dinner-submission"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "200px 1fr", gap: isMobile ? "16px" : "32px", alignItems: "start", marginTop: isMobile ? "24px" : "32px" }}>
+                <div style={{
+                  width: isMobile ? "100%" : "200px",
+                  height: isMobile ? "200px" : "150px",
+                  borderRadius: "12px",
+                  border: "1px solid rgba(100, 108, 255, 0.2)",
+                  background: "linear-gradient(135deg, rgba(100, 108, 255, 0.2) 0%, rgba(100, 108, 255, 0.1) 100%)",
+                  padding: "20px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center"
+                }}>
+                  <div style={{
+                    fontSize: "48px",
+                    fontWeight: 700,
+                    background: "linear-gradient(135deg, #646cff 0%, #7c7cff 100%)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    backgroundClip: "text"
+                  }}>
+                    R
+                  </div>
+                </div>
+                <div>
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "start", marginBottom: "16px" }}>
+                    <div>
+                      <h3 style={{ color: "#ffffff", fontSize: "24px", fontWeight: 700, marginBottom: "4px" }}>
+                        Rover ↗
+                      </h3>
+                      <p style={{ color: "#646cff", fontSize: "16px", marginBottom: "8px" }}>TAMUhack 2026</p>
+                    </div>
+                  </div>
+                  <p style={{ color: "#d4d4d4", lineHeight: "1.8" }}>
+                    A multi-modal AI assistant that brings web autonomy to visually impaired users. Features custom iMessage integration, 
+                    dual voice agents for natural phone calls, voice-controlled web browsing, enterprise-grade credential management, and 
+                    real-time video processing. Built with Claude 4.5 Sonnet orchestrator, AWS ECS, and Model Context Protocol (MCP) for 
+                    unified tool integration across 250+ productivity apps.
+                  </p>
+                </div>
+              </div>
+            </a>
+          </FloatingCard>
+
           {/* FallGuy Project */}
           <FloatingCard>
             <a
