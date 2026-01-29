@@ -98,7 +98,7 @@ const AnimatedHero: React.FC = () => {
               <span style={styles.cursor}>_</span>
             </h1>
             <div style={styles.title}>
-              <span>Aspiring Savant</span>
+              <span>Aspiring Visionary</span>
               
             </div>
             <p style={styles.description}>

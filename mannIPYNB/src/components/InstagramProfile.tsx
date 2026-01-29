@@ -132,10 +132,16 @@ const InstagramProfile: React.FC<InstagramProfileProps> = ({ username, apiEndpoi
 
           <div style={styles.bio}>
             <p style={styles.bioText}>
-              <strong>18 | CS @ TAMU '28</strong>
+              <strong>Digital creator</strong>
             </p>
             <p style={styles.bioText}>
-              hmu ✉️: mannbellani1@gmail.com
+              compsci @tamu '29
+            </p>
+            <p style={styles.bioText}>
+              180 days to turn my life around 🔄
+            </p>
+            <p style={styles.bioText}>
+              mannbellani1@gmail.com
             </p>
           </div>
         </div>
