@@ -83,12 +83,6 @@ const OrganizePopup: React.FC = () => {
             cursor: "pointer",
             transition: "all 0.3s ease",
           }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.transform = "translateX(4px)";
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.transform = "translateX(0)";
-          }}
           onClick={(e) => {
             // Track click if needed
             window.open("https://organizecampus.com", "_blank");
@@ -101,20 +95,13 @@ const OrganizePopup: React.FC = () => {
               width: isMobile ? "50px" : "60px",
               height: isMobile ? "50px" : "60px",
               objectFit: "contain",
-              borderRadius: "8px",
+              borderRadius: "4px",
               border: "2px solid rgba(100, 108, 255, 0.5)",
               background: "rgba(255, 255, 255, 0.05)",
               padding: "4px",
               transition: "all 0.3s ease",
             }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = "scale(1.1)";
-              e.currentTarget.style.borderColor = "#646cff";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = "scale(1)";
-              e.currentTarget.style.borderColor = "rgba(100, 108, 255, 0.5)";
-            }}
+            
           />
           <div style={{ flex: 1 }}>
             <div
@@ -126,7 +113,7 @@ const OrganizePopup: React.FC = () => {
                 display: "inline-block",
                 padding: "4px 12px",
                 background: "rgba(100, 108, 255, 0.1)",
-                borderRadius: "12px",
+                borderRadius: "4px",
                 border: "1px solid rgba(100, 108, 255, 0.3)",
               }}
             >
@@ -184,14 +171,7 @@ const OrganizePopup: React.FC = () => {
             transition: "all 0.3s ease",
             flexShrink: 0,
           }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.background = "rgba(255, 255, 255, 0.2)";
-            e.currentTarget.style.transform = "rotate(90deg)";
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.background = "rgba(255, 255, 255, 0.1)";
-            e.currentTarget.style.transform = "rotate(0deg)";
-          }}
+          
         >
           ×
         </button>

@@ -119,7 +119,7 @@ function App() {
                 <div style={{
                   width: isMobile ? "100%" : "200px",
                   height: isMobile ? "200px" : "150px",
-                  borderRadius: "12px",
+                    borderRadius: "6px",
                   border: "1px solid rgba(100, 108, 255, 0.2)",
                   background: "#ffffff",
                   padding: "8px",
@@ -148,7 +148,7 @@ function App() {
                       display: "inline-block",
                       padding: "4px 12px",
                       background: "rgba(100, 108, 255, 0.15)",
-                      borderRadius: "12px",
+                      borderRadius: "6px",
                       border: "1px solid rgba(100, 108, 255, 0.4)",
                       fontSize: "13px",
                       color: "#646cff",
@@ -165,7 +165,7 @@ function App() {
                   <div style={{
                     padding: "12px 16px",
                     background: "rgba(100, 108, 255, 0.08)",
-                    borderRadius: "8px",
+                    borderRadius: "6px",
                     border: "1px solid rgba(100, 108, 255, 0.2)",
                     marginTop: "12px"
                   }}>
@@ -209,7 +209,7 @@ function App() {
                   style={{
                     width: isMobile ? "100%" : "200px",
                     height: isMobile ? "200px" : "150px",
-                    borderRadius: "12px",
+                    borderRadius: "6px",
                     objectFit: "cover" as const,
                     border: "1px solid rgba(100, 108, 255, 0.2)"
                   }}
@@ -249,7 +249,7 @@ function App() {
                   style={{
                     width: isMobile ? "100%" : "200px",
                     height: isMobile ? "200px" : "150px",
-                    borderRadius: "12px",
+                    borderRadius: "6px",
                     objectFit: "cover" as const,
                     border: "1px solid rgba(100, 108, 255, 0.2)"
                   }}
@@ -288,7 +288,7 @@ function App() {
                   style={{
                     width: isMobile ? "100%" : "200px",
                     height: isMobile ? "200px" : "150px",
-                    borderRadius: "12px",
+                    borderRadius: "6px",
                     objectFit: "cover" as const,
                     border: "1px solid rgba(100, 108, 255, 0.2)"
                   }}

@@ -90,14 +90,6 @@ const InstagramProfile: React.FC<InstagramProfileProps> = ({ username, apiEndpoi
               target="_blank"
               rel="noopener noreferrer"
               style={styles.followButton}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = "scale(1.05)";
-                e.currentTarget.style.boxShadow = "0 4px 20px rgba(100, 108, 255, 0.4)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = "scale(1)";
-                e.currentTarget.style.boxShadow = "0 2px 10px rgba(100, 108, 255, 0.2)";
-              }}
             >
               Follow
             </a>
@@ -171,7 +163,7 @@ const styles = {
     padding: "32px",
     background: "rgba(100, 108, 255, 0.05)",
     border: "1px solid rgba(100, 108, 255, 0.2)",
-    borderRadius: "20px",
+    borderRadius: "6px",
     flexWrap: "wrap" as const
   },
   profileImageWrapper: {
@@ -222,22 +214,19 @@ const styles = {
     background: "linear-gradient(135deg, #646cff 0%, #535bf2 100%)",
     color: "#ffffff",
     textDecoration: "none",
-    borderRadius: "8px",
+    borderRadius: "4px",
     fontSize: "14px",
-    fontWeight: 600,
-    transition: "all 0.3s ease",
-    boxShadow: "0 2px 10px rgba(100, 108, 255, 0.2)"
+    fontWeight: 600
   },
   messageButton: {
     padding: "8px 24px",
     background: "rgba(255, 255, 255, 0.1)",
     color: "#ffffff",
     textDecoration: "none",
-    borderRadius: "8px",
+    borderRadius: "4px",
     fontSize: "14px",
     fontWeight: 600,
-    border: "1px solid rgba(255, 255, 255, 0.2)",
-    transition: "all 0.3s ease"
+    border: "1px solid rgba(255, 255, 255, 0.2)"
   },
   stats: {
     display: "flex",
