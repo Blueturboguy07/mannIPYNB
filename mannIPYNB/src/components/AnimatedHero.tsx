@@ -74,20 +74,44 @@ const AnimatedHero: React.FC = () => {
           }}
         >
           <div style={styles.textSection}>
-            <div style={styles.greeting}>Hey there, I'm</div>
-            <h1 style={styles.name}>
-              <span style={styles.nameGradient}>Mann</span>
-              <span style={styles.cursor}>_</span>
-            </h1>
-            <div style={styles.title}>
-              <span>Aspiring Visionary</span>
-              
+            <style>{`
+              @keyframes blockBlink {
+                0%, 49% { opacity: 1; }
+                50%, 100% { opacity: 0; }
+              }
+            `}</style>
+            <div style={styles.terminalWindow}>
+              <div style={styles.terminalBar}>
+                <div style={styles.terminalDots}>
+                  <span style={{ ...styles.terminalDot, background: "#ff5f57" }} />
+                  <span style={{ ...styles.terminalDot, background: "#febc2e" }} />
+                  <span style={{ ...styles.terminalDot, background: "#28c840" }} />
+                </div>
+                <span style={styles.terminalTitle}>mann@macbook ~ %</span>
+              </div>
+              <div style={styles.terminalBody}>
+                <div style={styles.terminalLine}>
+                  <span style={styles.terminalPrompt}>~</span>
+                  <span style={styles.terminalText}> Hey there, I'm</span>
+                </div>
+                <h1 style={styles.name}>
+                  <span style={styles.nameGradient}>Mann</span>
+                  <span style={styles.blockCursor}>&nbsp;</span>
+                </h1>
+                <div style={styles.terminalLine}>
+                  <span style={styles.terminalPrompt}>~</span>
+                  <span style={styles.terminalText}> Aspiring Visionary</span>
+                </div>
+                <div style={{ ...styles.terminalLine, marginTop: "16px" }}>
+                  <span style={styles.terminalPrompt}>~</span>
+                  <span style={styles.terminalText}> Computer Science student at Texas A&M University.</span>
+                </div>
+                <div style={styles.terminalLine}>
+                  <span style={styles.terminalPrompt}>~</span>
+                  <span style={styles.terminalText}> Passionate about using ML to build impactful solutions.</span>
+                </div>
+              </div>
             </div>
-            <p style={styles.description}>
-              Computer Science student at Texas A&M University.
-              Passionate about using ML to build impactful solutions.
-              <span style={styles.blink}>|</span>
-            </p>
             
             <div style={styles.socialButtons}>
               <a
@@ -186,22 +210,62 @@ const styles = {
   textSection: {
     zIndex: 2
   },
-  greeting: {
-    fontSize: "20px",
-    color: "#646cff",
-    marginBottom: "20px",
-    fontWeight: 500,
+  terminalWindow: {
+    background: "#1a1a1a",
+    border: "1px solid rgba(255, 255, 255, 0.1)",
+    borderRadius: "8px",
+    overflow: "hidden",
     opacity: 0,
-    animation: "fadeInUp 0.8s ease 0.2s forwards"
+    animation: "fadeInUp 0.8s ease 0.2s forwards",
+    fontFamily: "'SF Mono', 'Menlo', 'Monaco', 'Courier New', monospace"
+  },
+  terminalBar: {
+    background: "#2d2d2d",
+    padding: "10px 16px",
+    display: "flex",
+    alignItems: "center",
+    gap: "12px"
+  },
+  terminalDots: {
+    display: "flex",
+    gap: "8px"
+  },
+  terminalDot: {
+    width: "12px",
+    height: "12px",
+    borderRadius: "50%",
+    display: "inline-block"
+  },
+  terminalTitle: {
+    fontSize: "13px",
+    color: "#999",
+    flex: 1,
+    textAlign: "center" as const
+  },
+  terminalBody: {
+    padding: "24px"
+  },
+  terminalLine: {
+    marginBottom: "4px",
+    lineHeight: "1.6"
+  },
+  terminalPrompt: {
+    color: "#646cff",
+    fontWeight: 600,
+    fontSize: "clamp(14px, 1.5vw, 18px)"
+  },
+  terminalText: {
+    color: "#d4d4d4",
+    fontSize: "clamp(14px, 1.5vw, 18px)"
   },
   name: {
     fontSize: "clamp(48px, 8vw, 96px)",
     fontWeight: 800,
     color: "#ffffff",
-    marginBottom: "20px",
+    marginBottom: "12px",
+    marginTop: "8px",
     lineHeight: "1.1",
-    opacity: 0,
-    animation: "fadeInUp 0.8s ease 0.4s forwards"
+    fontFamily: "'SF Mono', 'Menlo', 'Monaco', 'Courier New', monospace"
   },
   nameGradient: {
     background: "linear-gradient(135deg, #646cff 0%, #535bf2 50%, #7c7cff 100%)",
@@ -209,31 +273,14 @@ const styles = {
     WebkitTextFillColor: "transparent",
     backgroundClip: "text"
   },
-  cursor: {
-    color: "#646cff",
-    animation: "blink 1s infinite"
-  },
-  title: {
-    fontSize: "clamp(20px, 3vw, 32px)",
-    color: "#b4b4b8",
-    marginBottom: "32px",
-    fontWeight: 400,
-    opacity: 0,
-    animation: "fadeInUp 0.8s ease 0.6s forwards"
-  },
-  blink: {
-    color: "#646cff",
-    animation: "blink 1s infinite",
-    marginLeft: "8px"
-  },
-  description: {
-    fontSize: "clamp(16px, 2vw, 20px)",
-    color: "#d4d4d4",
-    lineHeight: "1.8",
-    marginBottom: "48px",
-    maxWidth: "500px",
-    opacity: 0,
-    animation: "fadeInUp 0.8s ease 0.8s forwards"
+  blockCursor: {
+    display: "inline-block",
+    width: "clamp(24px, 4vw, 48px)",
+    height: "clamp(48px, 8vw, 96px)",
+    background: "#646cff",
+    marginLeft: "4px",
+    verticalAlign: "bottom",
+    animation: "blockBlink 1s step-end infinite"
   },
   socialButtons: {
     display: "flex",
