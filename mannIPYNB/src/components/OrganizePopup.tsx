@@ -15,12 +15,14 @@ const OrganizePopup: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    // Show popup after a short delay
-    const timer = setTimeout(() => {
-      setIsVisible(true);
-    }, 2000);
-
-    return () => clearTimeout(timer);
+    const handleScroll = () => {
+      if (window.scrollY > 200) {
+        setIsVisible(true);
+        window.removeEventListener("scroll", handleScroll);
+      }
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const handleDismiss = () => {

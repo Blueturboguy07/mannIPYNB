@@ -60,7 +60,7 @@ const AnimatedHero: React.FC = () => {
           <span style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#28c840", display: "inline-block" }} />
         </div>
         <span style={{ flex: 1, textAlign: "center", fontSize: "13px", color: "#777" }}>
-          mann@macbook — zsh — 80x24
+          {isMobile ? "mann@iphone" : "mann@macbook"} — zsh — 80x24
         </span>
       </div>
 
@@ -88,7 +88,7 @@ const AnimatedHero: React.FC = () => {
           </div>
 
           <div style={{ marginBottom: "6px" }}>
-            <span style={{ color: "#28c840" }}>mann@macbook</span>
+            <span style={{ color: "#28c840" }}>{isMobile ? "mann@iphone" : "mann@macbook"}</span>
             <span style={{ color: "#777" }}>:</span>
             <span style={{ color: "#6699ff" }}>~</span>
             <span style={{ color: "#777" }}>$ </span>
@@ -115,7 +115,7 @@ const AnimatedHero: React.FC = () => {
           </h1>
 
           <div style={{ marginBottom: "6px" }}>
-            <span style={{ color: "#28c840" }}>mann@macbook</span>
+            <span style={{ color: "#28c840" }}>{isMobile ? "mann@iphone" : "mann@macbook"}</span>
             <span style={{ color: "#777" }}>:</span>
             <span style={{ color: "#6699ff" }}>~</span>
             <span style={{ color: "#777" }}>$ </span>
@@ -133,7 +133,7 @@ const AnimatedHero: React.FC = () => {
           </div>
 
           <div style={{ marginBottom: "6px" }}>
-            <span style={{ color: "#28c840" }}>mann@macbook</span>
+            <span style={{ color: "#28c840" }}>{isMobile ? "mann@iphone" : "mann@macbook"}</span>
             <span style={{ color: "#777" }}>:</span>
             <span style={{ color: "#6699ff" }}>~</span>
             <span style={{ color: "#777" }}>$ </span>
@@ -201,7 +201,7 @@ const AnimatedHero: React.FC = () => {
 
           {/* Final prompt with blinking cursor */}
           <div>
-            <span style={{ color: "#28c840" }}>mann@macbook</span>
+            <span style={{ color: "#28c840" }}>{isMobile ? "mann@iphone" : "mann@macbook"}</span>
             <span style={{ color: "#777" }}>:</span>
             <span style={{ color: "#6699ff" }}>~</span>
             <span style={{ color: "#777" }}>$ </span>
