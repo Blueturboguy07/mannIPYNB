@@ -161,7 +161,7 @@ const styles = {
     gap: "40px",
     marginBottom: "48px",
     padding: "32px",
-    background: "rgba(100, 108, 255, 0.05)",
+    background: "rgba(255, 255, 255, 0.03)",
     border: "1px solid rgba(100, 108, 255, 0.2)",
     borderRadius: "6px",
     flexWrap: "wrap" as const
@@ -188,7 +188,7 @@ const styles = {
     right: "-10px",
     bottom: "-10px",
     borderRadius: "50%",
-    background: "radial-gradient(circle, rgba(100, 108, 255, 0.4) 0%, transparent 70%)",
+    background: "transparent",
     animation: "pulse 3s ease-in-out infinite",
     zIndex: 1
   },

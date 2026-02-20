@@ -18,7 +18,7 @@ const FloatingCard: React.FC<FloatingCardProps> = ({ children, className }) => {
 
 const styles = {
   card: {
-    background: "rgba(100, 108, 255, 0.05)",
+    background: "rgba(255, 255, 255, 0.03)",
     border: "1px solid rgba(100, 108, 255, 0.2)",
     borderRadius: "6px",
     padding: "32px",

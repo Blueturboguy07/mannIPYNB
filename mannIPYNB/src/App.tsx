@@ -80,7 +80,7 @@ function App() {
     <div style={{ background: "#0a0a0f", color: "#ffffff", minHeight: "100vh" }}>
       <AnimatedHero />
       
-      <AnimatedSection id="experience" style={{ padding: isMobile ? "60px 16px" : "120px 24px", background: "#0f0f1e" }}>
+      <AnimatedSection id="experience" style={{ padding: isMobile ? "60px 16px" : "120px 24px", background: "#0a0a0f" }}>
         <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
           <h2 style={{ 
             fontSize: "clamp(28px, 6vw, 64px)", 
@@ -147,7 +147,7 @@ function App() {
                     <div style={{ 
                       display: "inline-block",
                       padding: "4px 12px",
-                      background: "rgba(100, 108, 255, 0.15)",
+                      background: "rgba(255, 255, 255, 0.05)",
                       borderRadius: "6px",
                       border: "1px solid rgba(100, 108, 255, 0.4)",
                       fontSize: "13px",
@@ -164,7 +164,7 @@ function App() {
                   </p>
                   <div style={{
                     padding: "12px 16px",
-                    background: "rgba(100, 108, 255, 0.08)",
+                    background: "rgba(255, 255, 255, 0.03)",
                     borderRadius: "6px",
                     border: "1px solid rgba(100, 108, 255, 0.2)",
                     marginTop: "12px"
@@ -315,7 +315,7 @@ function App() {
         </div>
       </AnimatedSection>
 
-      <AnimatedSection id="skills" style={{ padding: isMobile ? "60px 16px" : "80px 24px", background: "#0f0f1e" }}>
+      <AnimatedSection id="skills" style={{ padding: isMobile ? "60px 16px" : "80px 24px", background: "#0a0a0f" }}>
         <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
           <h2 style={{ 
             fontSize: "clamp(32px, 5vw, 64px)", 

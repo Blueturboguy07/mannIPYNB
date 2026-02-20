@@ -246,7 +246,7 @@ const styles = {
     width: "60px",
     height: "60px",
     borderRadius: "6px",
-    background: "rgba(100, 108, 255, 0.1)",
+    background: "rgba(255, 255, 255, 0.05)",
     border: "2px solid rgba(100, 108, 255, 0.3)",
     display: "flex",
     alignItems: "center",

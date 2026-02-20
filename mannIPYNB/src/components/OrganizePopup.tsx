@@ -112,7 +112,7 @@ const OrganizePopup: React.FC = () => {
                 marginBottom: "6px",
                 display: "inline-block",
                 padding: "4px 12px",
-                background: "rgba(100, 108, 255, 0.1)",
+                background: "rgba(255, 255, 255, 0.05)",
                 borderRadius: "4px",
                 border: "1px solid rgba(100, 108, 255, 0.3)",
               }}
