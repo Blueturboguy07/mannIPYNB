@@ -5,7 +5,6 @@ import AnimatedSection from "./components/AnimatedSection";
 import FloatingCard from "./components/FloatingCard";
 import ExpandableSkillDots from "./components/ExpandableSkillDots";
 import InstagramProfile from "./components/InstagramProfile";
-import OrganizePopup from "./components/OrganizePopup";
 import southwestImage from "./assets/southwest.png";
 import brainNetworksImage from "./assets/brainnetworkslab.png";
 import ismImage from "./assets/ISM.png";
@@ -360,8 +359,6 @@ function App() {
           <InstagramProfile username="mann.ascends" />
         </div>
       </AnimatedSection>
-      
-      <OrganizePopup />
     </div>
   );
 }
