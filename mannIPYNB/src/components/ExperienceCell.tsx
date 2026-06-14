@@ -38,7 +38,7 @@ render_timeline(experiences)`;
         style={styles.playButton}
         disabled={isRunning}
       >
-        {isRunning ? "⏳" : "▶"}
+        {isRunning ? "■" : "▶"}
       </button>
 
       <div style={styles.cell}>

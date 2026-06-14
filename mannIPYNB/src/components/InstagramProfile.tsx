@@ -130,7 +130,7 @@ const InstagramProfile: React.FC<InstagramProfileProps> = ({ username, apiEndpoi
               compsci @tamu '29
             </p>
             <p style={styles.bioText}>
-              180 days to turn my life around 🔄
+              180 days to turn my life around
             </p>
             <p style={styles.bioText}>
               mannbellani1@gmail.com

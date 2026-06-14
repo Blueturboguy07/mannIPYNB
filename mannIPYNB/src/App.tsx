@@ -178,7 +178,7 @@ function App() {
                       alignItems: "center",
                       gap: "6px"
                     }}>
-                      <span>🚀</span> Coming Soon: Phase 2
+                      Coming Soon: Phase 2
                     </div>
                     <p style={{ 
                       fontSize: "13px", 
