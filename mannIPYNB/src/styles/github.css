@@ -1,0 +1,185 @@
+/* github.com repositories tab (light). Primer tokens, verbatim. */
+
+.gh {
+  --gh-fg: #1f2328;
+  --gh-muted: #59636e;
+  --gh-accent: #0969da;
+  --gh-border: #d1d9e0;
+  --gh-subtle: #f6f8fa;
+
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial,
+    sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--gh-fg);
+}
+
+.gh__head {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding-bottom: 10px;
+  font-size: 14px;
+}
+
+.gh__mark {
+  color: var(--gh-fg);
+  flex: none;
+}
+
+.gh__owner {
+  color: var(--gh-accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.gh__owner:hover {
+  text-decoration: underline;
+}
+
+.gh__crumb {
+  color: var(--gh-muted);
+}
+
+.gh__section {
+  color: var(--gh-muted);
+}
+
+.gh__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--gh-border);
+}
+
+.gh-repo {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--gh-border);
+}
+
+.gh-repo__head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.gh-repo__name {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--gh-accent);
+  text-decoration: none;
+  line-height: 1.25;
+  word-break: break-word;
+}
+
+.gh-repo__name:hover {
+  text-decoration: underline;
+}
+
+.gh-pill {
+  padding: 0 7px;
+  border: 1px solid var(--gh-border);
+  border-radius: 2em;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 500;
+  color: var(--gh-muted);
+  white-space: nowrap;
+}
+
+.gh-repo__desc {
+  margin: 8px 0 0;
+  max-width: 72ch;
+  font-size: 14px;
+  color: var(--gh-muted);
+}
+
+.gh-topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 0;
+}
+
+.gh-topic {
+  display: inline-block;
+  padding: 0 10px;
+  border-radius: 2em;
+  background: #ddf4ff;
+  color: var(--gh-accent);
+  font-size: 12px;
+  line-height: 22px;
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.gh-topic:hover {
+  background: var(--gh-accent);
+  color: #fff;
+  text-decoration: none;
+}
+
+.gh-repo__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--gh-muted);
+}
+
+.gh-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--gh-muted);
+  text-decoration: none;
+}
+
+.gh-meta svg {
+  width: 13px;
+  height: 13px;
+}
+
+.gh-meta--link:hover {
+  color: var(--gh-accent);
+  text-decoration: none;
+}
+
+.gh-lang-dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.gh__all {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 16px;
+  padding: 5px 14px;
+  border: 1px solid var(--gh-border);
+  border-radius: 6px;
+  background: var(--gh-subtle);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--gh-fg);
+  text-decoration: none;
+}
+
+.gh__all:hover {
+  background: #eff2f5;
+  border-color: #b6bfc9;
+  text-decoration: none;
+}
+
+.gh__all svg {
+  color: var(--gh-muted);
+}

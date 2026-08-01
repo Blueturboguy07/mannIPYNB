@@ -1,0 +1,424 @@
+/* JupyterLab (light). Variable names mirror JupyterLab's own --jp-* tokens so
+   the values can be checked against the real theme. */
+
+.jp {
+  --jp-bg: #ffffff;
+  --jp-layout-2: #eeeeee;
+  --jp-border-1: #e0e0e0;
+  --jp-border-2: #eeeeee;
+  --jp-editor-bg: #f7f7f7;
+  --jp-editor-border: #cfcfcf;
+  --jp-brand: #2196f3;
+  --jp-in-prompt: #307fc1;
+  --jp-out-prompt: #bf5b3d;
+  --jp-fg1: rgba(0, 0, 0, 0.87);
+  --jp-fg2: rgba(0, 0, 0, 0.54);
+  --jp-fg3: rgba(0, 0, 0, 0.38);
+  --jp-link: #1976d2;
+  --jp-prompt-w: 64px;
+  --jp-code-font: Menlo, Consolas, "DejaVu Sans Mono", "Liberation Mono", monospace;
+  --jp-code-size: 13px;
+  --jp-code-lh: 1.3077;
+  --jp-ui-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+
+  max-width: 1120px;
+  margin: 0 auto;
+  border-radius: 7px;
+  overflow: hidden;
+  background: var(--jp-bg);
+  font-family: var(--jp-ui-font);
+  color: var(--jp-fg1);
+  box-shadow: 0 26px 70px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.09);
+}
+
+.jp ::selection {
+  background: #b3d7ff;
+  color: #000;
+}
+
+/* --- tab bar ------------------------------------------------------- */
+
+.jp__tabbar {
+  display: flex;
+  align-items: flex-end;
+  height: 28px;
+  padding: 0 4px;
+  background: var(--jp-layout-2);
+  border-bottom: 1px solid var(--jp-border-1);
+}
+
+.jp__tab {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 27px;
+  padding: 0 10px;
+  background: var(--jp-bg);
+  border: 1px solid var(--jp-border-1);
+  border-bottom: none;
+  border-radius: 3px 3px 0 0;
+  font-size: 12.5px;
+  color: var(--jp-fg1);
+  max-width: 100%;
+}
+
+.jp__tabclose {
+  color: var(--jp-fg3);
+  margin-left: 2px;
+  flex: none;
+}
+
+/* --- toolbar ------------------------------------------------------- */
+
+.jp__toolbar {
+  display: flex;
+  align-items: center;
+  gap: 1px;
+  height: 32px;
+  padding: 0 6px;
+  background: var(--jp-bg);
+  border-bottom: 1px solid var(--jp-border-1);
+  overflow: hidden;
+}
+
+.jp__tb {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 24px;
+  padding: 0;
+  border: none;
+  border-radius: 2px;
+  background: transparent;
+  color: #616161;
+  cursor: pointer;
+  flex: none;
+}
+
+.jp__tb:hover {
+  background: #e0e0e0;
+  color: #212121;
+}
+
+.jp__tb:active {
+  background: #cfcfcf;
+}
+
+.jp__tbsep {
+  width: 1px;
+  height: 18px;
+  margin: 0 6px;
+  background: var(--jp-border-1);
+  flex: none;
+}
+
+.jp__tbspacer {
+  flex: 1 1 auto;
+}
+
+.jp__select {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  height: 22px;
+  padding: 0 4px 0 8px;
+  margin-left: 2px;
+  border: 1px solid var(--jp-border-1);
+  border-radius: 2px;
+  font-size: 12px;
+  color: var(--jp-fg1);
+  background: var(--jp-bg);
+  flex: none;
+}
+
+.jp__select svg {
+  color: var(--jp-fg2);
+}
+
+.jp__kernel {
+  border: none;
+  background: transparent;
+  padding: 0 6px;
+  font-family: inherit;
+  font-size: 12px;
+  color: var(--jp-fg2);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.jp__kernel:hover {
+  color: var(--jp-fg1);
+  text-decoration: underline;
+}
+
+.jp__kerneldot {
+  display: inline-flex;
+  align-items: center;
+  color: var(--jp-fg2);
+  flex: none;
+}
+
+.jp__kerneldot.is-busy {
+  color: #616161;
+}
+
+/* --- notebook body -------------------------------------------------- */
+
+.jp__notebook {
+  padding: 16px clamp(10px, 2.2vw, 26px) 56px;
+  background: var(--jp-bg);
+}
+
+.jp-cell {
+  display: flex;
+  padding: 5px 0;
+  border: 1px solid transparent;
+  border-radius: 2px;
+}
+
+.jp-cell__collapser {
+  flex: 0 0 8px;
+  margin-right: 4px;
+  border-radius: 2px;
+  background: transparent;
+  transition: background-color 0.1s;
+}
+
+.jp-cell:hover .jp-cell__collapser {
+  background: #e0e0e0;
+}
+
+.jp-cell.is-selected .jp-cell__collapser {
+  background: var(--jp-brand);
+}
+
+.jp-cell__main {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.jp-row {
+  display: flex;
+  align-items: flex-start;
+}
+
+.jp-row--output {
+  padding-top: 5px;
+}
+
+.jp-prompt {
+  flex: 0 0 var(--jp-prompt-w);
+  padding: 5px 8px 0 0;
+  text-align: right;
+  font-family: var(--jp-code-font);
+  font-size: var(--jp-code-size);
+  line-height: var(--jp-code-lh);
+  white-space: nowrap;
+  user-select: none;
+  border: none;
+  background: none;
+  color: transparent;
+}
+
+button.jp-prompt {
+  cursor: pointer;
+}
+
+button.jp-prompt:hover {
+  text-decoration: underline;
+}
+
+.jp-prompt--in {
+  color: var(--jp-in-prompt);
+}
+
+.jp-prompt--out {
+  color: var(--jp-out-prompt);
+}
+
+.jp-editor {
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 4px 8px;
+  background: var(--jp-editor-bg);
+  border: 1px solid var(--jp-editor-border);
+  border-radius: 2px;
+  overflow-x: auto;
+}
+
+.jp-editor pre {
+  margin: 0;
+  font-family: var(--jp-code-font);
+  font-size: var(--jp-code-size);
+  line-height: var(--jp-code-lh);
+  color: #212121;
+  white-space: pre;
+  tab-size: 4;
+}
+
+.jp-caret {
+  display: inline-block;
+  width: 1px;
+  height: calc(var(--jp-code-size) * var(--jp-code-lh));
+  background: #212121;
+  vertical-align: text-bottom;
+  animation: jp-caret 1.06s step-end infinite;
+}
+
+@keyframes jp-caret {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  50.01%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* pygments "default" — the palette Jupyter ships with. */
+.tok-c {
+  color: #408080;
+  font-style: italic;
+}
+.tok-s {
+  color: #ba2121;
+}
+.tok-k,
+.tok-kc {
+  color: #008000;
+  font-weight: bold;
+}
+.tok-nb {
+  color: #008000;
+}
+.tok-nf {
+  color: #0000ff;
+}
+.tok-nc {
+  color: #0000ff;
+  font-weight: bold;
+}
+.tok-m {
+  color: #666666;
+}
+.tok-o {
+  color: #666666;
+}
+
+/* --- outputs -------------------------------------------------------- */
+
+.jp-stream {
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 4px 8px 4px 0;
+  font-family: var(--jp-code-font);
+  font-size: var(--jp-code-size);
+  line-height: var(--jp-code-lh);
+  color: var(--jp-fg1);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.jp-out {
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 4px 8px 4px 0;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--jp-fg1);
+}
+
+/* :where() keeps this at zero specificity so outputs that reproduce another
+   product's palette (GitHub, Instagram) can style their own links normally. */
+.jp-out :where(a) {
+  color: var(--jp-link);
+  text-decoration: none;
+}
+
+.jp-out :where(a):hover {
+  text-decoration: underline;
+}
+
+/* --- rendered markdown ---------------------------------------------- */
+
+.jp-md {
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 2px 8px 2px 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--jp-fg1);
+}
+
+.jp-md h1 {
+  margin: 12px 0 6px;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  color: #000;
+}
+
+.jp-md h2 {
+  margin: 26px 0 2px;
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: #000;
+}
+
+.jp-md p {
+  margin: 8px 0;
+  max-width: 68ch;
+}
+
+.jp-md__lede {
+  color: var(--jp-fg2);
+  font-size: 15px;
+}
+
+.jp-md hr {
+  margin: 18px 0 4px;
+  border: none;
+  border-top: 1px solid var(--jp-border-1);
+}
+
+/* --- status bar ------------------------------------------------------ */
+
+.jp__statusbar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  height: 26px;
+  padding: 0 10px;
+  background: var(--jp-layout-2);
+  border-top: 1px solid var(--jp-border-1);
+  font-size: 11.5px;
+  color: var(--jp-fg2);
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@media (max-width: 720px) {
+  .jp {
+    --jp-prompt-w: 42px;
+  }
+
+  .jp__statusbar > span:nth-child(2),
+  .jp__statusbar > span:nth-child(3) {
+    display: none;
+  }
+
+  .jp__toolbar .jp__tb:nth-child(3),
+  .jp__toolbar .jp__tb:nth-child(4),
+  .jp__toolbar .jp__tb:nth-child(5),
+  .jp__select {
+    display: none;
+  }
+
+  .jp-md h1 {
+    font-size: 25px;
+  }
+}

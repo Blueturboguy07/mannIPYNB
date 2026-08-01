@@ -1,0 +1,129 @@
+/* Cell outputs. These are plain HTML rendered inside a notebook, so they stay
+   document-like: hairline rules, no shadows, no fills. */
+
+/* --- profile card ---------------------------------------------------- */
+
+.out-profile {
+  display: flex;
+  gap: 22px;
+  align-items: flex-start;
+}
+
+.out-profile__photo {
+  flex: none;
+  width: 168px;
+  height: 210px;
+  object-fit: cover;
+  border: 1px solid var(--jp-border-1);
+}
+
+.out-profile__body {
+  min-width: 0;
+  max-width: 62ch;
+}
+
+.out-profile__name {
+  margin: 0;
+  font-size: 19px;
+  font-weight: 600;
+  color: #000;
+}
+
+.out-profile__meta {
+  margin: 2px 0 12px;
+  font-size: 13px;
+  color: var(--jp-fg2);
+}
+
+.out-profile p {
+  margin: 0 0 10px;
+}
+
+.out-profile__links {
+  margin-top: 14px;
+  font-size: 13.5px;
+  color: var(--jp-fg3);
+}
+
+@media (max-width: 620px) {
+  .out-profile {
+    flex-direction: column;
+  }
+
+  .out-profile__photo {
+    width: 140px;
+    height: 175px;
+  }
+}
+
+/* --- experience ------------------------------------------------------ */
+
+.out-exp {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: 74ch;
+}
+
+.out-exp__item {
+  padding: 16px 0;
+  border-top: 1px solid var(--jp-border-1);
+}
+
+.out-exp__item:first-child {
+  border-top: none;
+  padding-top: 2px;
+}
+
+.out-exp p {
+  margin: 0;
+}
+
+.out-exp__role {
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+}
+
+.out-exp__org {
+  margin-top: 1px !important;
+  font-size: 14px;
+  color: var(--jp-fg1);
+}
+
+.out-exp__org--lead {
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+}
+
+.out-exp__dates {
+  margin-top: 2px !important;
+  font-size: 12.5px;
+  font-family: var(--jp-code-font);
+  color: var(--jp-fg2);
+}
+
+.out-exp__desc {
+  margin-top: 8px !important;
+  color: var(--jp-fg1);
+}
+
+/* Successive titles at one employer, indented under a shared rule. */
+.out-exp__positions {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0 0 0 16px;
+  border-left: 2px solid var(--jp-border-1);
+}
+
+.out-exp__positions > li + li {
+  margin-top: 14px;
+}
+
+.out-exp__subrole {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: #000;
+}
+

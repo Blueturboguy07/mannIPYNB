@@ -1,0 +1,131 @@
+/* macOS Terminal.app, zsh. Colours are the stock xterm-256 set, muted for a
+   dark profile — no accent hues that a real shell would not emit. */
+
+.term {
+  --fg: #e4e4e4;
+  --dim: #9a9a9a;
+  --faint: #5f5f60;
+  --blue: #7ab8ff;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100svh;
+  background: #0d0d0e;
+  font-family: ui-monospace, "SF Mono", Menlo, Monaco, "Cascadia Mono", "Roboto Mono", Consolas,
+    "Liberation Mono", monospace;
+  font-size: clamp(12px, 1.15vw, 16px);
+  line-height: 1.5;
+  color: var(--fg);
+  font-variant-ligatures: none;
+}
+
+.term ::selection {
+  background: #3b5f8a;
+  color: #fff;
+}
+
+.term__body {
+  flex: 1 1 auto;
+  padding: clamp(16px, 2.6vw, 30px) clamp(14px, 3.4vw, 44px);
+  overflow: hidden;
+}
+
+.term__line {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.term__blank {
+  height: 1.5em;
+}
+
+.term__user {
+  color: var(--fg);
+}
+
+.term__cwd {
+  color: var(--fg);
+}
+
+.term__sigil {
+  color: var(--dim);
+}
+
+.term__cmd {
+  color: var(--fg);
+}
+
+.term__dim {
+  color: var(--dim);
+}
+
+.term__faint {
+  color: var(--faint);
+}
+
+.term__link {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.22);
+  text-underline-offset: 3px;
+}
+
+.term__link:hover,
+.term__link:focus-visible {
+  color: var(--blue);
+  text-decoration-color: currentColor;
+}
+
+.term__banner {
+  margin: 0;
+  font: inherit;
+  /* Block glyphs only stack seamlessly when the line box equals the cell. */
+  line-height: 1;
+  white-space: pre;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  padding: 0.35em 0;
+  /* Everything that is not a solid block is the font's drop shadow. */
+  color: #2b2b2d;
+}
+
+.term__banner::-webkit-scrollbar {
+  display: none;
+}
+
+/* The "shadow" glyphs of the figlet font sit back so the blocks read as solid. */
+.term__banner b {
+  font-weight: inherit;
+  color: #fbfbfb;
+}
+
+.term__banner i {
+  font-style: normal;
+  color: #2b2b2d;
+}
+
+.term__cursor {
+  display: inline-block;
+  width: 0.58em;
+  height: 1.05em;
+  background: var(--fg);
+  vertical-align: -0.19em;
+  animation: term-blink 1.06s step-end infinite;
+}
+
+.term__cursor--solid {
+  animation: none;
+}
+
+@keyframes term-blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  50.01%,
+  100% {
+    opacity: 0;
+  }
+}
