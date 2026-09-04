@@ -31,6 +31,12 @@ interface ApiRepo {
   archived: boolean;
 }
 
+/** GitHub labels a licence it cannot map to an SPDX id as "Other", not "NOASSERTION". */
+function normalizeLicense(spdxId: string | null | undefined): string | null {
+  if (!spdxId) return null;
+  return spdxId === "NOASSERTION" ? "Other" : spdxId;
+}
+
 /**
  * Module-level cache so the stdout line and the rendered cards in the same
  * notebook cell agree, and so we only hit the (unauthenticated, 60/hr) GitHub
@@ -61,7 +67,7 @@ function load(): Promise<RepoData> {
         language: r.language,
         stars: r.stargazers_count,
         forks: r.forks_count,
-        license: r.license?.spdx_id ?? null,
+        license: normalizeLicense(r.license?.spdx_id),
         topics: r.topics ?? [],
         pushedAt: r.pushed_at,
         homepage: r.homepage,

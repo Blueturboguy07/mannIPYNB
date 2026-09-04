@@ -27,9 +27,10 @@ nothing is ever blank.
 ## Making the Instagram numbers self-refreshing
 
 Right now the follower count and the three reels come from the snapshot taken on
-2026-08-01. There is no unauthenticated endpoint that returns either, so keeping them
-current needs the Instagram Graph API. `api/instagram.ts` is already written for it —
-it just needs two environment variables on the Vercel project:
+2026-09-03. The public endpoints that still return them (see below) rate limit hard and
+break without notice, so keeping the numbers current on their own needs the Instagram
+Graph API. `api/instagram.ts` is already written for it — it just needs two environment
+variables on the Vercel project:
 
 ```
 IG_USER_ID        Instagram Business/Creator account id
@@ -55,13 +56,23 @@ before then; a Vercel cron hitting that monthly is the usual way to automate it.
 
 ### Updating the snapshot by hand instead
 
-Cheaper if you would rather not set up a Meta app. Reel cover images come from a public
-endpoint that needs no auth:
+Cheaper if you would rather not set up a Meta app. Two public endpoints, no auth needed.
+Follower total, following, and the last 12 posts with their play counts and shortcodes:
+
+```
+curl -H "User-Agent: Instagram 219.0.0.12.117 Android" \
+  "https://i.instagram.com/api/v1/users/web_profile_info/?username=mann.ascends"
+```
+
+It rate limits aggressively — a `"Please wait a few minutes"` body means try again shortly,
+not that the endpoint is gone. Then the cover image for each reel you want to feature:
 
 ```
 curl -L -o src/assets/reels/<shortcode>.jpg \
   "https://www.instagram.com/p/<shortcode>/media/?size=l"
+sips -Z 640 src/assets/reels/<shortcode>.jpg --out src/assets/reels/<shortcode>.jpg
 ```
 
 Then update `IG_SNAPSHOT` in `src/data.ts` with the new shortcodes, view counts and
-follower total.
+follower total, formatted the way Instagram formats them (`88.5K`, `479K`), and delete the
+cover files that are no longer imported.

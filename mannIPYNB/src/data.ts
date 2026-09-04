@@ -32,13 +32,23 @@ export interface Experience extends Position {
 
 export const EXPERIENCE: Experience[] = [
   {
+    title: "Founder",
+    organization: "Publik",
+    employmentType: "Full-time",
+    start: "2026-07",
+    end: null,
+    location: "College Station, Texas, United States",
+    description:
+      "publikhq.com - free, open-source alternatives to the apps they charge you for, in one place. built the catalogue and most of what is on it",
+  },
+  {
     title: "Tech/Startup Creator",
     organization: "Instagram",
     employmentType: "Full-time",
     start: "2025-12",
     end: null,
     description:
-      "document personal progress, share my takes, and kill AI slop. 50k+ followers, 20M+ views",
+      "document personal progress, share my takes, and kill AI slop. 88k+ followers, 20M+ views",
   },
   {
     title: "Outreach+Logistics",
@@ -153,7 +163,7 @@ export interface Repo {
 }
 
 /**
- * Snapshot taken 2026-08-01 so the section renders instantly and still renders
+ * Snapshot taken 2026-09-03 so the section renders instantly and still renders
  * correctly when the unauthenticated GitHub API is rate limited. Refreshed at
  * runtime by ReposOutput.
  */
@@ -163,11 +173,11 @@ export const SEED_REPOS: Repo[] = [
     description:
       "Open-source macOS AI copilot that floats over your screen, sees/hears your meetings, and stays hidden from screen shares. Cluely alternative, bring-your-own-key.",
     language: "JavaScript",
-    stars: 918,
-    forks: 199,
+    stars: 1296,
+    forks: 302,
     license: "GPL-3.0",
     topics: [],
-    pushedAt: "2026-08-01T04:08:14Z",
+    pushedAt: "2026-08-10T16:36:55Z",
     homepage: null,
   },
   {
@@ -175,23 +185,23 @@ export const SEED_REPOS: Repo[] = [
     description:
       "Local-first cross-platform voice dictation (proof of concept). macOS built & working; Windows built but untested.",
     language: "Rust",
-    stars: 82,
-    forks: 19,
+    stars: 127,
+    forks: 42,
     license: "MIT",
     topics: [],
-    pushedAt: "2026-07-31T17:42:44Z",
+    pushedAt: "2026-09-01T06:31:47Z",
     homepage: null,
   },
   {
     name: "NitroAI",
     description:
-      "Free, local-first AI study notes - turn any lecture, PDF, or video into notes, flashcards, quizzes, and a study chat. Runs fully local or with your own API key.",
+      "Free, local-first AI study notes — turn any lecture, PDF, or video into notes, flashcards, quizzes, and a study chat. Runs fully local or with your own API key.",
     language: "TypeScript",
-    stars: 58,
-    forks: 9,
+    stars: 116,
+    forks: 25,
     license: "AGPL-3.0",
     topics: [],
-    pushedAt: "2026-07-31T00:55:03Z",
+    pushedAt: "2026-08-30T00:15:35Z",
     homepage: null,
   },
   {
@@ -199,40 +209,40 @@ export const SEED_REPOS: Repo[] = [
     description:
       "Open-source, local-first cycle, fertility, pregnancy and perimenopause companion. An alternative to Flo. AGPL-3.0.",
     language: "TypeScript",
-    stars: 31,
-    forks: 13,
+    stars: 59,
+    forks: 21,
     license: "AGPL-3.0",
     topics: [],
-    pushedAt: "2026-07-31T16:56:58Z",
+    pushedAt: "2026-08-05T19:07:08Z",
     homepage: null,
   },
   {
-    name: "freeharmony",
+    name: "publikclip",
     description:
-      "Free, open-source facial harmony analysis. Every metric free, photos never leave your device. AGPL-3.0.",
-    language: "TypeScript",
-    stars: 14,
-    forks: 4,
+      "Long video in, scored vertical clips out — the clipper that shows its work. Local-first OpusClip alternative: speaker-tracked camera, styled captions, auditable virality scoring, Instagram outcome calibration.",
+    language: "Python",
+    stars: 58,
+    forks: 17,
     license: "AGPL-3.0",
     topics: [],
-    pushedAt: "2026-07-31T18:30:20Z",
-    homepage: "https://freeharmony.vercel.app",
+    pushedAt: "2026-08-13T11:41:41Z",
+    homepage: "https://publikhq.com/publikclip",
   },
   {
-    name: "noscroll",
+    name: "nut-ai",
     description:
-      "Use Instagram and YouTube without short-form video. Free, open source, no paywall, no ads, no analytics.",
-    language: "Swift",
-    stars: 9,
-    forks: 0,
-    license: "AGPL-3.0",
-    topics: ["ios", "android", "digital-wellbeing", "screen-time", "open-source"],
-    pushedAt: "2026-07-30T17:33:27Z",
+      "Open-source AI photo calorie tracker that never shows a number it cannot justify. BYO-key, no server, no subscription.",
+    language: "TypeScript",
+    stars: 45,
+    forks: 14,
+    license: "Other",
+    topics: [],
+    pushedAt: "2026-08-10T16:37:09Z",
     homepage: null,
   },
 ];
 
-export const SEED_TOTALS = { repos: 23, stars: 1123 };
+export const SEED_TOTALS = { repos: 29, stars: 1836 };
 
 /** github/linguist colours, verbatim. */
 export const LANGUAGE_COLORS: Record<string, string> = {
@@ -271,23 +281,38 @@ export interface InstagramSnapshot {
   reels: Reel[];
 }
 
-import reelDbdGOCKqy3q from "./assets/reels/DbdGOCKqy3q.jpg";
-import reelDbb0uaiKtsJ from "./assets/reels/Dbb0uaiKtsJ.jpg";
-import reelDbYA8EqCK0 from "./assets/reels/DbYA8E-qCK0.jpg";
+import reelDa1MddqQW8 from "./assets/reels/Da1Mdd-qQW8.jpg";
+import reelDcZ6Vq1q59O from "./assets/reels/DcZ6Vq1q59O.jpg";
+import reelDcTP3VPKgil from "./assets/reels/DcTP3VPKgil.jpg";
 
 /**
- * Snapshot read off the live profile on 2026-08-01. Replaced at runtime by
+ * Snapshot read off the live profile on 2026-09-03. Replaced at runtime by
  * /api/instagram when Meta Graph API credentials are configured — see
  * api/instagram.ts.
  */
 export const IG_SNAPSHOT: InstagramSnapshot = {
-  followers: "57.9K",
-  following: "244",
+  followers: "88.5K",
+  following: "340",
   fullName: "Mann Bellani",
   bio: ["19 | LARPslayer", "building @publikhq"],
   reels: [
-    { code: "DbdGOCKqy3q", views: "70.7K", cover: reelDbdGOCKqy3q },
-    { code: "Dbb0uaiKtsJ", views: "72.8K", cover: reelDbb0uaiKtsJ },
-    { code: "DbYA8E-qCK0", views: "54.7K", cover: reelDbYA8EqCK0 },
+    {
+      code: "Da1Mdd-qQW8",
+      views: "479K",
+      cover: reelDa1MddqQW8,
+      caption: "open sourcing slop pt.2",
+    },
+    {
+      code: "DcZ6Vq1q59O",
+      views: "92.2K",
+      cover: reelDcZ6Vq1q59O,
+      caption: "CapCut is FINISHED with this free mobile app",
+    },
+    {
+      code: "DcTP3VPKgil",
+      views: "44.4K",
+      cover: reelDcTP3VPKgil,
+      caption: "delete it",
+    },
   ],
 };

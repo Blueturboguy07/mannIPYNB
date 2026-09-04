@@ -16,8 +16,9 @@ const ProfileOutput: React.FC = () => (
         people run it themselves.
       </p>
       <p>
-        Right now I ship tools people install on their own machines and document the process for
-        ~58k people on Instagram. Before that: founded Organize Campus, modelled weather delays at
+        Right now I&apos;m building Publik &mdash; one place to find the free, open-source
+        replacement for whatever app you are paying for &mdash; and documenting the process for
+        ~88k people on Instagram. Before that: founded Organize Campus, modelled weather delays at
         Southwest Airlines, and researched adaptive tool manipulation at the Brain Networks Lab.
       </p>
       <p className="out-profile__links">
